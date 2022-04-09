@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cours javascript</title>
+	<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+	<header>
+		<nav id="navbar">
+			<ul id="list_items">
+				<li class="item"><a href="#variable">Les variables</a></li>
+				<li class="item"><a href="#condition">Les conditions</a></li>
+				<li class="item"><a href="#loop">Les boucles</a></li>
+				<li class="item">lien 4</li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<h1>Cours JS</h1>
+		<h2 id="variable">Les variables</h2>
+
+		<h3>Définition d'une variable</h3>
+		<p>C'est un espace stockage qui doit être déclaré avec un nom, et que l'on peut à tout moment modifier, on attribue la valeur à une variable avec le signe '='</p>
+		<h3>Format du nom d'une variable en JS</h3>
+		<ul>
+			<li>La variable est sensible à la casse : variable, Variable, vArIaBlE sont 3 variables distinctes</li>
+			<li>La variable ne peut etre composé que de lettre, de chiffre et pas de caractères spéciaux (sauf _ et $)</li>
+			<li>La variable ne peut pas commencer par un chiffre</li>
+			<li>On ne doit pas utiliser comme nom de variable une fonction JS connu (var, let, return, break ...)</li>
+			<li>Par convention, on va nommer les variables JS en utilisant le camelCase</li>
+		</ul>
+		<h3>Déclaration d'une variable</h3>
+		<p>On peut déclarer une variable avec let ou var</p>
+		<p>La différence principale est leur portée, mais nous verrons cela plus tard après avoir étudié les conditions, les boucles et les fonctions</p>
+		<p>L'autre différence est qu'avec let on ne peut pas déclarer 2 fois la même variable (dans le même scope)</p>
+		<h3>Le type de données d'une variable</h3>
+		<ul>
+			<li>string ==> chaîne de caractères</li>
+			<li>Number ==> chiffres</li>
+			<li>Boolean ==> true or false</li>
+			<li>null</li>
+			<li>undefined</li>
+			<li>NaN ==> Not a Number</li>
+			<li>Symbol ==> Array ou tableau</li>
+			<li>Object</li>
+		</ul>
+		<h3>Les opérateurs de comparaison</h3>
+		<ul>
+			<li>== pour voir si 2 valeurs (ou variables) sont égales</li>
+			<li>=== pour voir si 2 valeurs (ou variables) sont strictement égales</li>
+			<li>!= pour voir si 2 valeurs sont différentes</li>
+			<li>!== pour voir si 2 valeurs sont strictement différentes</li>
+			<li>> plus grand que</li>
+			<li>>= supérieur ou égal</li>
+			<li>< plus petit que</li>
+			<li><= inférieur ou égal</li>
+			<li></li>
+			<li></li>
+		</ul>
+		<h3>La concaténation</h3>
+		<p>C'est le fait d'associer deux éléments ensembles (variables, string, integer)</p>
+
+		<h2>Les constantes</h2>
+		<p>C'est également un espace de stockage, qui peut avoir les même types de données qu'une variable</p>
+		<p>Elle a les même restrictions de nommage qu'une variable</p>
+		<p>Celle-ci sera déclarée avec const</p>
+		<p>La seule différence avec une variable, c'est qu'une fois déclarée, on ne pourra plus la modifier</p>
+		<h2>Les sélecteurs d'éléments</h2>
+		<p>Pour attacher une fonction JS à un élément, il va falloir, dans un premier temps le sélectionner</p>
+		<ul>
+			<li>document.getElementsByTagName(localName: DOMString); va sélectionner les balises</li>
+			<li>document.getElementById(elementId: DOMString); va sélectionner le premier id correspondant</li>
+			<li>document.getElementsByClassName(classNames: DOMString); va sélectionne toutes les classes css correspondantes</li>
+			<li>document.querySelector(selectors: DOMString); va sélectionner le premier élément trouvé, il va falloir lui indiquer si c'est une classe ou un id, on pourra utiliser les sélecteurs d'élements</li>
+			<li>document.querySelectorAll(selectors: DOMString) va sélectionner tous les élements ciblés dans le DOM, de la même façon que querySelector, il faudra indiquer si c'est une classe '.' ou un id '#'</li>
+		</ul>
+		<h4>Exemple :</h4>
+		<p>ici, on va ajouter des éléments dans un container avec la fonction js innerHTML</p>
+
+		<div>
+			<p>Contenu ajouté ci-dessous, cliquez <span id="click_add">ICI</span></p>
+			<div id="inner_html_add"></div>
+		</div>
+		<h4>Exercice</h4>
+		<p>Ajouter une image au click</p>
+		<div>
+			<p>Image ajouté ci-dessous, cliquez <span id="click_add_img">ICI</span></p>
+			<div id="inner_html_add_img"></div>
+		</div>
+		<h2 id="condition">Les conditions</h2>
+		<h3>Les conditions if else</h3>
+		<p>le 'if' va interpréter une condition, si celle-ci est valide, elle va exécuter une instruction</p>
+		<p>si un else est présent, et que la condition du if n'est pas valide, c'est l'instruction du else qui va être exécuté</p>
+		<h3>Les conditions if ... else if ... else</h3>
+		<p>Celle-ci fonctionne de la même façon que le if else, mais dans le else if on va pouvoir rajouter des conditions supplémentaires</p>
+		<p>On peut mettre autant de else if que l'on veut</p>
+		<h3>Les opérateurs logiques</h3>
+		<ul>
+			<li>&& ==> correspond à 'et'</li>
+			<li>|| ==> correspond à 'ou'</li>
+		</ul>
+		<h3>Exercice</h3>
+		<p>Créer une condition pour savoir si un nombre est pair ou impair et compris entre 1 et 100</p>
+		<p>Vous aurez besoin d'utiliser les modulos</p>
+		<br>
+		<div class="form_odd_even">
+			<label for="odd_even">Renseigner un chiffre compris entre 1 et 100</label>
+			<input type="text" name="odd_even" id="odd_even">
+			<div id="odd_even_submit">Tester</div>
+			<div id="odd_even_msg"></div>
+		</div>
+		<h3>L'opérateur ternaire</h3>
+		<p>c'est une condition simple dont le résultat var alimentater directement la variable</p>
+		<p>var resultCondition = condition ? si la condition est vérifiée : si la condition est false;</p>
+		<h3>La condition switch ... case</h3>
+		<p>L'instruction switch évalue une expression et, selon le résultat obtenu et le cas associé, exécute les instructions correspondantes.</p>
+		<a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/switch">Lien Doc</a>
+		
+
+		<h2 id="loop">Les boucles</h2>
+		<h3>La boucle for</h3>
+		<p>Pour fonctionner cette boucle a besoin d'un point de départ, un point d'arrivée et une itération pour chaque tour de boucle</p>
+		<p>for(var i = 1; i <= 10; i++) </p>
+		<p>Dans cet exemple il y aura 10 tour de boucle</p>
+		<div id="count_loop"></div>
+		<h3>Exercice boucle FOR</h3>
+		<p>Créer un script où on déterminera un chiffre entre 1 et 100 et qui affichera tous les chiffres pairs ou impairs de 1 au chiffre renseigné</p>
+		<p>J'aurai besoin pour cela de 2 variables</p>
+		<ul>
+			<li>La variable max pour stopper la boucle jusqu'au dernier chiffre à afficher</li>
+			<li>La variable oddEven pour afficher tous les nombres pairs si oddEven == even et tous les chiffres impairs si oddEven == odd</li>
+		</ul>
+		<div class="form_odd_even_loop">
+			<label for="odd_even_loop">Renseigner un chiffre compris entre 1 et 100</label>
+			<input type="text" name="odd_even_loop" id="odd_even_loop">
+			<div class="odd_even_submit_loop" data-choice="even">PAIR</div>
+			<div class="odd_even_submit_loop" data-choice="odd">IMPAIR</div>
+			<div id="odd_even_msg_loop"></div>
+		</div>
+		<br><br>
+		<input type="text" name="" id="autocomplete">
+		<div id="value_display"></div>
+		<br>
+		<br>
+		<h3>Exercice affichage d'une image selon le choix d'un select</h3>
+		<label for="select_img">Choissir une image</label>
+		<select name="select_img" id="select_img">
+			<option value="0" selected>Choisir une image</option>
+			<option value="1">Star Wars</option>
+			<option value="2">Retour vers le futur</option>
+		</select>
+		<div id="img_display"></div>
+		
+		<h3>La boucle while</h3>
+		<p>La boucle while va s'executer tant que la condition de la boucle est respectée</p>
+		<p>On va lire un tableau ['bleu','blanc','rouge']</p>
+		<p>while(elt < tab.length ) la boucle va s'excuter</p>
+		<div id="content_while"></div>
+
+		<h3>La boucle do ... while</h3>
+		<p>La boucle do ... while executer une premiere l'instruction sans vérifier la condition, ensuite, c'est une boucle while classique</p>
+	
+		<div id="content_do_while"></div>
+		<br>
+		<br>
+
+	</main>
+	<footer>
+
+	</footer>
+	<script type="text/javascript" src="assets/js/scripts.js"></script>
+</body>
+</html>

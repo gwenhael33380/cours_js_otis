@@ -1,0 +1,54 @@
+nav>ul {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	list-style: none;
+}
+nav>ul>li:not(:last-child) {
+	margin-right: 10%;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+.color_red {
+	color:  red;
+}
+#click_add,
+#click_add_img,
+#odd_even_submit,
+.odd_even_submit_loop {
+	cursor: pointer;
+}
+#odd_even_submit,
+.odd_even_submit_loop {
+	display: inline-block;
+	padding: 10px 40px;
+	color: #fff;
+	background: #000;
+}
+.form_odd_even input,
+.form_odd_even label,
+.form_odd_even_loop input,
+.form_odd_even_loop label {
+	display: block;
+	margin: 10px 0;
+}
+#odd_even_msg_loop {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.odd,.even {
+	padding: 10px 20px;
+	margin: 10px;
+	color: #fff;
+}
+.odd {
+	background: red;
+}
+.even {
+	background: blue;
+}
+
